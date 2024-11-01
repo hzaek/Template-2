@@ -1,2 +1,2 @@
-# Template-2
-Responsive Site
+# Template one
+This is Responsive site "learned from elzero channel"

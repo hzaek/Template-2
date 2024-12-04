@@ -181,6 +181,8 @@ header .form i{
     min-height: 100svh;
     background: url(../images/landing.jpg) center no-repeat;
     background-size:cover;
+    transition: 0.3s;
+    
 }
 
 .landing .overlay{
@@ -219,6 +221,19 @@ header .form i{
     top: 50%;
     font-weight: 800;
 }
+.landing .Bg{
+    transition: 0.3s;
+    background-color: #393939;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.landing .Bg:hover{
+    color: red;
+}
 .landing i:first-of-type{
     right: 15px;
 }
@@ -241,6 +256,8 @@ header .form i{
     border-radius: 50%;
     right: 50%;
     margin-left: 5px;
+    transition: 0.3s;
+    
 }
 .landing ul li[active]{
     background-color: var(--main-color);

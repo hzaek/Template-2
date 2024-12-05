@@ -114,7 +114,7 @@ window.addEventListener("scroll", function () {
     topper.style.visibility = 'hidden'
     header.style.backgroundColor = "rgba(0,0,0,0)";
   }
-  let currentScroll = Math.round((this.scrollY / maxScrollY) * 100);
+  let currentScroll = (this.scrollY / maxScrollY) * 100 ;
   let currentPercent = `${currentScroll}%`
   topper.style.backgroundImage = `conic-gradient(from 0deg,#233142 0%,#233142 ${currentPercent},transparent ${currentPercent})`
 

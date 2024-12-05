@@ -63,3 +63,39 @@ leftBg.onclick = function () {
   }
 };
 
+let menu = document.getElementsByClassName('toggle-menu')[0]
+let menuUl = document.querySelector('header .container nav ul')
+let menuUlli = document.querySelectorAll('header .container nav ul li')
+menu.onclick = function() {
+  if (window.getComputedStyle(menuUl).display === 'flex'){
+    menuUl.classList.remove('show')
+    menuUl.classList.add('hidden')
+
+  }
+  else if (window.getComputedStyle(menuUl).display === 'none'){
+    menuUl.classList.remove('hidden')
+    menuUl.classList.add('show')
+
+  }
+};
+menuUlli.forEach(function(el){
+  el.onclick = function(){
+    menuUlli.forEach(function(el){
+      el.removeAttribute('active')
+    })
+    el.setAttribute('active','')
+  }
+})
+
+
+let header = document.querySelector('header')
+window.addEventListener('scroll', function() {
+  // Check if the scroll position is greater than or equal to 100px
+  if (window.scrollY >= 100) {
+      // Change the background color to black
+      header.style.backgroundColor = 'rgba(0,0,0,0.7)';
+  } else {
+      // Reset the background color if scroll is less than 100px
+      header.style.backgroundColor = 'rgba(0,0,0,0)'
+  }
+});

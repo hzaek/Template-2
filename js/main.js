@@ -3,11 +3,17 @@ let leftBg = document.querySelector(".leftBg");
 let landing = document.querySelector(".landing");
 let li = document.querySelectorAll(".landing ul li");
 
+// let background = [
+//   "url('../images/subscribe.jpg')",
+//   "url('../images/landing.jpg')",
+//   "url('../images/design-features.jpg')",
+// ];
+
 let background = [
-  "url('../images/subscribe.jpg')",
-  "url('../images/landing.jpg')",
-  "url('../images/design-features.jpg')",
-];
+  "url('https://hzaek.github.io/Template-2/images/subscribe.jpg')",
+  "url('https://hzaek.github.io/Template-2/images/landing.jpg')",
+  "url('https://hzaek.github.io/Template-2/images/design-features.jpg')",
+]
 
 let active = document.createAttribute("active");
 
@@ -24,11 +30,11 @@ rightBg.onclick = function () {
       document.getElementById(theActive).setAttribute("active", "");
 
 
-      document.styleSheets[2].insertRule(
-        `.landing{background-image: ${background[0]}}`,
-        document.styleSheets[2].cssRules.length
-      );
-      // landing.style.backgroundImage = background[i];
+      // document.styleSheets[2].insertRule(
+      //   `.landing{background-image: ${background[0]}}`,
+      //   document.styleSheets[2].cssRules.length
+      // );
+      landing.style.backgroundImage = background[i];
 
       break;
     }
@@ -39,11 +45,11 @@ rightBg.onclick = function () {
       });
       document.getElementById(theActive).setAttributeNode(active);
 
-      document.styleSheets[2].insertRule(
-        `.landing{background-image: ${background[i + 1]}}`,
-        document.styleSheets[2].cssRules.length
-      );
-      // landing.style.backgroundImage = background[i + 1];
+      // document.styleSheets[2].insertRule(
+      //   `.landing{background-image: ${background[i + 1]}}`,
+      //   document.styleSheets[2].cssRules.length
+      // );
+      landing.style.backgroundImage = background[i + 1];
       break;
     }
   }

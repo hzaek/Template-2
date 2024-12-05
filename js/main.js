@@ -13,7 +13,7 @@ let background = [
   "url('https://hzaek.github.io/Template-2/images/subscribe.jpg')",
   "url('https://hzaek.github.io/Template-2/images/landing.jpg')",
   "url('https://hzaek.github.io/Template-2/images/design-features.jpg')",
-]
+];
 
 let active = document.createAttribute("active");
 
@@ -28,7 +28,6 @@ rightBg.onclick = function () {
       });
       let theActive = current[parseInt(i)];
       document.getElementById(theActive).setAttribute("active", "");
-
 
       // document.styleSheets[2].insertRule(
       //   `.landing{background-image: ${background[0]}}`,
@@ -101,13 +100,31 @@ menuUlli.forEach(function (el) {
 });
 
 let header = document.querySelector("header");
+let topper = document.querySelector('.topper')
 window.addEventListener("scroll", function () {
+  let maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+
   // Check if the scroll position is greater than or equal to 100px
   if (window.scrollY >= 100) {
     // Change the background color to black
+    topper.style.visibility = 'visible'
     header.style.backgroundColor = "rgba(0,0,0,0.7)";
   } else {
     // Reset the background color if scroll is less than 100px
+    topper.style.visibility = 'hidden'
     header.style.backgroundColor = "rgba(0,0,0,0)";
   }
+  let currentScroll = Math.round((this.scrollY / maxScrollY) * 100);
+  let currentPercent = `${currentScroll}%`
+  topper.style.backgroundImage = `conic-gradient(from 0deg,#233142 0%,#233142 ${currentPercent},transparent ${currentPercent})`
+
+
 });
+
+topper.onclick = function(){
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+}
